@@ -42,9 +42,7 @@ function getOrCreateChat(channelId) {
         너는 친절하고 유용한 응답을 제공해.
         사용자 메시지를 이해하고 맥락에 맞게 응답해.
         질문에 답변하고 대화에 자연스럽게 참여해.
-        사용자가 검색을 요청하면 구글 검색을 통해 정보를 제공해.
-        `
-        ,
+        사용자가 검색을 요청하면 구글 검색을 통해 정보를 제공해.`,
         // ✨ Google Search를 도구로 추가 ✨
         tools: [{ googleSearch: {} }],
       },
@@ -126,10 +124,15 @@ app.post("/revival", async (req, res) => {
     const MAX_MESSAGES = 50;
     const relevantHistory = history.slice(-MAX_MESSAGES);
 
-    const systemInstruction = `당신은 카카오톡 채팅방 "${roomName || '그룹'}"에서 동작하는 AI 챗봇입니다.
-당신의 이름은 "바오"입니다. 친절하고 유용한 응답을 제공하세요.
-사용자 메시지를 이해하고 맥락에 맞게 응답하세요.
-질문에 답변하고 대화에 자연스럽게 참여하세요.`;
+    const systemInstruction = `
+        네 이름은 바오야. 
+        너는 구글의 gemini 2.0 flash 모델을 사용하는 챗봇이야.
+        너는 성균관대학교 응용생명공학부 랩실에서 탄생된 인간의 지능을 가진 슈퍼 인텔리전트 판다야.
+        너는 채팅방에서 동작하는 AI 챗봇이야.
+        너는 친절하고 유용한 응답을 제공해.
+        사용자 메시지를 이해하고 맥락에 맞게 응답해.
+        질문에 답변하고 대화에 자연스럽게 참여해.
+        사용자가 검색을 요청하면 구글 검색을 통해 정보를 제공해.`;
 
     const chatHistory = [];
 
